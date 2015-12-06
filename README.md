@@ -12,7 +12,7 @@ perl -i.bak -pe 's/^enable_static=no/enable_static=yes/;s/enable_shared=yes/enab
 ./configure
 make
 mv modules/goext.a modules/libgoext.a
-go build -buildmode=c-shared -o modules/goext.so goext.go
+CGO_CFLAGS=$(php-config --includes) CGO_LDFLAGS="-undefined dynamic_lookup" go build -buildmode=c-shared -o modules/goext.so goext.go
 install modules/goext.so $(php-config --extension-dir)
 ```
 
@@ -24,8 +24,9 @@ extension=goext.so
 
 ## SYSTEM REQUIREMENTS
 
-- PHP 7.0.0+
 - Mac OS X 10.x
+- PHP 7.0.0+
+- clang
 
 ## USAGE
 

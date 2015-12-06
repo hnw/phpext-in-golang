@@ -1,8 +1,7 @@
 package main
 
 /*
-#cgo CFLAGS: -I/Users/hnw/.phpenv/versions/7.0.0/include/php -I/Users/hnw/.phpenv/versions/7.0.0/include/php/main -I/Users/hnw/.phpenv/versions/7.0.0/include/php/TSRM -I/Users/hnw/.phpenv/versions/7.0.0/include/php/Zend -I/Users/hnw/.phpenv/versions/7.0.0/include/php/ext -I/Users/hnw/.phpenv/versions/7.0.0/include/php/ext/date/lib
-#cgo LDFLAGS: -L${SRCDIR}/modules -lgoext -undefined dynamic_lookup
+#cgo LDFLAGS: -L${SRCDIR}/modules -lgoext
 extern void get_module();
 #include "php.h"
 #include "php_ini.h"
